@@ -1,0 +1,12 @@
+solutions of prop drilling:
+1- component composition: Instead of passing props down through multiple layers of components, you can compose components together and pass props directly to the components that need them.
+2- Context API: React's Context API allows you to create a context and provide it to components that need access to certain data, eliminating the need for prop drilling.
+how to use context API:
+- we will make a folder calls store it is a naming convention to keep all the context related files in one place.
+- then create a file called shopping-cart-context.js inside the store folder.
+- In the shopping-cart-context.js file, we will create a context using React's createContext method.
+- pass opject with items array to it
+- create the provider in the app
+- try accessing the context in a child component using useContext hook.
+- try accessing the context in a child component using consumer component and add the js function to the jsx to access the context then return the jsx from that function.
+-pass state and functions to the context provider so that child components can access and modify the state as needed.

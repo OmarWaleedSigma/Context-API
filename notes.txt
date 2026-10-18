@@ -10,3 +10,18 @@ how to use context API:
 - try accessing the context in a child component using useContext hook.
 - try accessing the context in a child component using consumer component and add the js function to the jsx to access the context then return the jsx from that function.
 -pass state and functions to the context provider so that child components can access and modify the state as needed.
+
+----------------------------------------------------------
+* outsourcing context and state into seperate provider component in the shopping-cart-context.js file:
+- create a new component called ShoppingCartProvider that will wrap the children components and provide the context value.
+- Inside the ShoppingCartProvider component, define the state and functions that will be shared across components
+- accept children as a prop and return the context provider with the value prop set to the state and functions.
+- In the main App component, wrap the components that need access to the shopping cart context with the ShoppingCartProvider component.
+----------------------------------------------------------
+=> useReducer hook: The useReducer hook is a more advanced state management solution that can be used in conjunction with the Context API. It allows you to manage complex state logic and actions in a more organized way. You can define a reducer function that handles different actions and updates the state accordingly, and then use the useReducer hook to manage the state in your context provider. This can help reduce prop drilling and make your code more maintainable.
+=> how to use it in the shopping-cart-context.js file:
+- import useReducer from react
+- the useReducer hook takes two arguments: a reducer function and an initial state. The reducer function defines how the state should change based on different actions, while the initial state is the starting point for the state.
+- it returns an array with two elements: the current state and a dispatch function that can be used to trigger actions and update the state.
+- define the reducer function that takes the current state and an action as arguments, and returns a new state based on the action type. The reducer function should handle different action types and update the state accordingly.
+- when we dispatch an action we pass an object with a type property that indicates the action being performed, and payload property that contains any additional data needed to update the state. The reducer function will use the action type and payload to determine how to update the state.
